@@ -28,8 +28,31 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+#modall {
+	position:absolute;
+	width: 630px;
+	height: 688px;
+	background-color: red;
+	z-index:2;
+	top: 50vh;
+	left: 50vw;
+	transform: translateX(-50%);
+	
+}
+
+#modalAjoutPhoto {
+	position:absolute;
+	width: 630px;
+	height: 688px;
+	background-color: red;
+	z-index:3;
+	top: 50vh;
+	left: 50vw;
+	transform: translateX(-50%);
+}
 body {
 	line-height: 1;
+	position:relative;
 }
 ol, ul {
 	list-style: none;
@@ -48,11 +71,11 @@ table {
 }
 /** end reset css**/
 body {
-	max-width: 1140px;
-	margin:auto;
+	
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
 header {
 	display: flex;
 	justify-content: space-between;
@@ -97,6 +120,9 @@ nav li {
 
 li:hover {
 	color: #B1663C;
+}
+main {
+	width: 1440px;
 }
 #introduction {
 	display: flex;
@@ -186,3 +212,118 @@ footer nav ul {
 	margin: 2em
 }
 
+.centre {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.93rem;
+	height: 6.25rem;
+}
+
+.button {
+	background-color: #fefef8;
+	padding: 0.56rem 1.25rem;
+	border: 0.06rem solid #1d6154;
+	border-radius: 1.56rem;
+	color: #1d6154;
+	font-weight: 700;
+	font-size: 1.2rem;
+	font-family: Syne;
+	cursor: pointer;
+}
+
+.button:focus {
+	background-color: #1d6154;
+	color: white;
+}
+
+#contact {
+	width: 50%;
+	margin: auto;
+}
+
+#contact > * {
+	text-align: center;
+}
+
+#contact h2{
+	margin-bottom: 1.25rem;
+}
+
+#contact form {
+	text-align: left;
+	margin-top: 1.87rem;
+	display: flex;
+	flex-direction: column;
+}
+
+#contact input {
+	height: 3.12rem;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0 0.25rem 0.87rem rgba(0, 0, 0, 0.09);
+}
+
+#contact label {
+	margin: 2em 0 1em 0;
+	font-weight: 700;
+}
+
+#contact textarea {
+	border: none;
+	box-shadow: 0 0.25rem 0.87rem rgba(0, 0, 0, 0.09);
+}
+
+input[type="submit"]{
+	cursor: pointer;
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto;
+	width: 11.25rem;
+	text-align: center;
+	border-radius: 3.75rem;
+}
+
+.haut {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+}
+
+.haut h2 {
+    margin: 0; 
+}
+
+.bas {
+    display: flex; 
+    align-items: center; 
+}
+
+.black-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	background-color: black;
+	color: white;
+	padding: 10px 20px;
+	z-index: 1001; 
+	margin-left: calc(-1 * ((100vw - 100%) / 2));
+  }
+  
+
+
+.black-bar p {
+    margin: 0; 
+	text-align: center;
+}
+
+.black-bar i {
+    margin-left: 5px; 
+}
+
+.dnone {
+	display:none;
+}
