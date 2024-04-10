@@ -9,10 +9,11 @@ async function login(user) {
           body: JSON.stringify(user)
       });
 
-      if (!response.ok) {
-          const errorText = await response.text();
-          throw new Error(`Erreur de connexion: pseudo ou mot de passe invalide`);
-      }
+    if (!response.ok) {
+      // error here
+      const errorText = await response.text();
+      throw new Error(`Erreur de connexion: ${errorText}`);
+    }
 
       const data = await response.json();
 

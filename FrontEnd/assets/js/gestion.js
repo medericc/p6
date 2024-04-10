@@ -3,9 +3,11 @@ async function fetchProjets() {
     const response = await fetch('http://localhost:5678/api/works');
     const data = await response.json();
 
-   
+    const projets = Array.isArray(data) ? data : [];
 
-    return data;
+    console.log('Projets récupérés:', projets); 
+
+    return projets;
   } catch (error) {
     console.error('Erreur de récupération des données des travaux:', error);
     throw error; 
@@ -16,12 +18,12 @@ async function fetchCategories() {
   try {
     const categoriesResponse = await fetch('http://localhost:5678/api/categories');
     const categoriesData = await categoriesResponse.json();
+    console.log('Réponse de l\'API pour les catégories:', categoriesData);
 
-  
-    const categoryNames = categoriesData.map(category => category.name);
+    const categoryIds = categoriesData.map(category => category.id);
+    console.log('Identifiants des catégories:', categoryIds);
 
- 
-    return categoryNames;
+    return categoryIds;
   } catch (error) {
     console.error('Erreur de récupération des catégories:', error);
     throw error;
@@ -33,7 +35,8 @@ async function updateGallery(filter = 'all') {
     const projets = await fetchProjets();
     const categories = await fetchCategories();
 
-    
+    console.log('Projets récupérés:', projets);
+    console.log('Réponse de l\'API pour les catégories:', categories);
 
     const galerie = document.getElementById('gallery');
     galerie.innerHTML = '';
